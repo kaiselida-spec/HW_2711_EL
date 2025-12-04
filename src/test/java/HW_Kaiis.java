@@ -14,15 +14,9 @@ public class HW_Kaiis {
         Configuration.browserSize = "1928x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 20000;
-        Configuration.fastSetValue = false;
-
     }
-
     @Test
     void fillFormTest() {
-
-
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -44,7 +38,6 @@ public class HW_Kaiis {
         $(byText("NCR")).click();
         $("#city").click();
         $(byText("Noida")).click();
-
         $(byCssSelector("#submit")).click();
 
         //проверка
