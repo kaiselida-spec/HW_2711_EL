@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class HW_Kaiis {
+public class HwKaiis {
     @BeforeAll
-    static void beforeAll() {
+    static void setupSelenideEnv() {
         Configuration.browserSize = "1928x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
