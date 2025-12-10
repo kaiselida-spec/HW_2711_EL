@@ -1,3 +1,4 @@
+package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class HwKaiis {
+public class RegistrationTests {
     @BeforeAll
     static void setupSelenideEnv() {
         Configuration.browserSize = "1928x1080";
