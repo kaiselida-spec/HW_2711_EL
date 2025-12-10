@@ -41,7 +41,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .checkResult("Subjects", "Biology")
                 .checkResult("Hobbies", "Music")
                 .checkResult("Picture", "test.jpeg")
-                .checkResult("Address", "Itay")
+                .checkResult("Address", "Italy")
                 .checkResult("State and City", "NCR Noida");
     }
 
