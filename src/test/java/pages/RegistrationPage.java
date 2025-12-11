@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.ResultTable;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -14,29 +15,32 @@ public class RegistrationPage {
 
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genderWrapper = $("#genderWrapper"),
+            genderWrapper = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
-            subjectsInput = $("#Biology"),
+            subjectsInput = $("#subjectsInput"),
             hobbiesWrapper = $("#hobbiesWrapper"),
             uploadPicture = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             stateDropdown = $("#state"),
             stateCityWrapper = $("#stateCity-wrapper"),
             cityDropdown = $("#city"),
-            submit = $("#submit"),
+            submit = $("#submit");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    public ResultTable resultTable = new ResultTable();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        removeBanners();
+        return this;
+    }
+    public RegistrationPage removeBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
-
-
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
@@ -100,7 +104,8 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setSubmit () {
-        submit.click()
+        submit.click();
+        return this;
     }
     public RegistrationPage checkResult( String key, String value) {
         $(".table-responsive").$(byText(key)).parent()
