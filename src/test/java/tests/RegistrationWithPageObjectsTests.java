@@ -26,16 +26,17 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setCityDropdown()
                 .setStateCityWrapper("Noida")
                 .setSubmit()
-                .checkResult("Student Name", "El Kaiis")
-                .checkResult("Student Email", "el@kaiis.com")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "1234567890")
-                .checkResult("Date of Birth", "3 May,1998")
-                .checkResult("Subjects", "Biology")
-                .checkResult("Hobbies", "Music")
-                .checkResult("Picture", "test.jpeg")
-                .checkResult("Address", "Italy")
-                .checkResult("State and City", "NCR Noida");
+                .checkResultTable("Student Name", "El Kaiis")
+                .checkResultTable("Student Email", "el@kaiis.com")
+                .checkResultTable("Gender", "Female")
+                .checkResultTable("Mobile", "1234567890")
+                .checkResultTable("Date of Birth", "3 May,1998")
+                .checkResultTable("Subjects", "Biology")
+                .checkResultTable("Hobbies", "Music")
+                .checkResultTable("Picture", "test.jpeg")
+                .checkResultTable("Address", "Italy")
+                .checkResultTable("State and City", "NCR Noida");
+
     }
 
     @Test
@@ -46,9 +47,9 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setGender("Female")
                 .setUserNumber("1234567890")
                 .setSubmit()
-                .checkResult("Student Name", "El Kaiis")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "1234567890");
+                .checkResultTable("Student Name", "El Kaiis")
+                .checkResultTable("Gender", "Female")
+                .checkResultTable("Mobile", "1234567890");
     }
 
     @Test

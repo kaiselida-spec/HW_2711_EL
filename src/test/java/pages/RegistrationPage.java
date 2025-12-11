@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
 
-    private SelenideElement firstNameInput = $("#firstName"),
+    private final SelenideElement firstNameInput = $("#firstName"),
 
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -29,7 +29,7 @@ public class RegistrationPage {
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
-    public ResultTable resultTable = new ResultTable();
+    ResultTable resultTable = new ResultTable();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -107,9 +107,8 @@ public class RegistrationPage {
         submit.click();
         return this;
     }
-    public RegistrationPage checkResult( String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
+    public RegistrationPage checkResultTable( String key, String value) {
+        resultTable.checkResult(key, value);
         return this;
     }
 
