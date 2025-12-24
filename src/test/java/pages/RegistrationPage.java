@@ -34,7 +34,7 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         removeBanners();
-        return this;
+        return this; 
     }
     public RegistrationPage removeBanners() {
         executeJavaScript("$('#fixedban').remove()");

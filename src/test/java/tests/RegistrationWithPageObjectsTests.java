@@ -45,7 +45,6 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setFirstName("El")
                 .setLastName("Kaiis")
                 .setGender("Female")
-                .setUserNumber("1234567890")
                 .setSubmit()
                 .checkResultTable("Student Name", "El Kaiis")
                 .checkResultTable("Gender", "Female")
