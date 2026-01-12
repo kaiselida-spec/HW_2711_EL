@@ -3,9 +3,15 @@ package pages.components;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
-    public void setDate (String day, String month,String year) {
-        $(".react-datepicker__year-select").selectOption("1998");
-        $(".react-datepicker__month-select").selectOption("May");
-        $(".react-datepicker__day--003:not(.react-datepicker__day--outside-month)").click();
+
+    public void setDate(String day, String month, String year) {
+
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+
+        String dayFormatted = String.format("%03d", Integer.parseInt(day));
+
+        $(".react-datepicker__day--" + dayFormatted +
+                ":not(.react-datepicker__day--outside-month)").click();
     }
 }

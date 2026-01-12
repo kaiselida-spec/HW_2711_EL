@@ -1,61 +1,44 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import utils.RandomUtils;
+import tests.data.RegistrationTestData;
 
 public class RegistrationWithFakerTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    Faker faker = new Faker();
 
     @Test
     void successfulRegistrationTest() {
 
-        String firstName = faker.name().firstName();
-        String lastName = faker.name().lastName();
-        String email = faker.internet().emailAddress();
-        String gender = RandomUtils.randomGender();
-        String phoneNumber = faker.number().digits(10);
-        String day = "3";
-        String month = "May";
-        String year = "1998";
-        String subject = RandomUtils.randomSubject();
-        String hobby = RandomUtils.randomHobby();
-        String picture = "test.jpeg";
-        String address = faker.address().fullAddress();
-        String state = RandomUtils.randomState();
-        String city = RandomUtils.randomCityForState(state);
-
+        RegistrationTestData data = new RegistrationTestData();
 
         registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setUserNumber(phoneNumber)
-                .setDateOfBirth(day, month, year)
-                .setSubjects(subject)
-                .setHobbies(hobby)
-                .setUploadPicture(picture)
-                .setCurrentAddress(address)
+                .setFirstName(data.firstName)
+                .setLastName(data.lastName)
+                .setEmail(data.email)
+                .setGender(data.gender)
+                .setUserNumber(data.phoneNumber)
+                .setDateOfBirth(data.day, data.month, data.year)
+                .setSubjects(data.subject)
+                .setHobbies(data.hobby)
+                .setUploadPicture(data.picture)
+                .setCurrentAddress(data.address)
                 .setStateDropdown()
-                .setStateCityWrapper(state)
+                .setStateCityWrapper(data.state)
                 .setCityDropdown()
-                .setStateCityWrapper(city)
+                .setStateCityWrapper(data.city)
                 .setSubmit()
 
-
-                .checkResultTable("Student Name", firstName + " " + lastName)
-                .checkResultTable("Student Email", email)
-                .checkResultTable("Gender", gender)
-                .checkResultTable("Mobile", phoneNumber)
-                .checkResultTable("Date of Birth", day + " " + month + "," + year)
-                .checkResultTable("Subjects", subject)
-                .checkResultTable("Hobbies", hobby)
-                .checkResultTable("Picture", picture)
-                .checkResultTable("Address", address)
-                .checkResultTable("State and City", state + " " + city);
+                .checkResultTable("Student Name", data.firstName + " " + data.lastName)
+                .checkResultTable("Student Email", data.email)
+                .checkResultTable("Gender", data.gender)
+                .checkResultTable("Mobile", data.phoneNumber)
+                .checkResultTable("Date of Birth", data.day + " " + data.month + "," + data.year)
+                .checkResultTable("Subjects", data.subject)
+                .checkResultTable("Hobbies", data.hobby)
+                .checkResultTable("Picture", data.picture)
+                .checkResultTable("Address", data.address)
+                .checkResultTable("State and City", data.state + " " + data.city);
     }
 }

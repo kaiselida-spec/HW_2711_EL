@@ -1,6 +1,7 @@
-package tests;
+package tests.data;
 
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -10,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static tests.TestData.*;
 
-public class RegistrationWithTestDataTests  extends TestBase {
+/*public class RegistrationWithTestDataTests  extends TestBase {
    // String firstName = "El";
    // String lastName = "Kaiis";
    // String userEmail = "el@kaiis.com";
@@ -58,4 +59,4 @@ public class RegistrationWithTestDataTests  extends TestBase {
                 text(userEmail)
         );
     }
-}
+}*/
