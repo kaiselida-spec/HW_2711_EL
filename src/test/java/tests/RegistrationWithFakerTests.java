@@ -12,6 +12,7 @@ public class RegistrationWithFakerTests extends TestBase {
     void successfulRegistrationTest() {
 
         RegistrationTestData data = new RegistrationTestData();
+        int dayInt = Integer.parseInt(data.day);
 
         registrationPage.openPage()
                 .setFirstName(data.firstName)
@@ -19,7 +20,7 @@ public class RegistrationWithFakerTests extends TestBase {
                 .setEmail(data.email)
                 .setGender(data.gender)
                 .setUserNumber(data.phoneNumber)
-                .setDateOfBirth(data.day, data.month, data.year)
+                .setDateOfBirth(dayInt, data.month, data.year)
                 .setSubjects(data.subject)
                 .setHobbies(data.hobby)
                 .setUploadPicture(data.picture)

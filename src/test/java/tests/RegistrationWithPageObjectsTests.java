@@ -16,7 +16,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setEmail("el@kaiis.com")
                 .setGender("Female")
                 .setUserNumber("1234567890")
-                .setDateOfBirth("3", "May", "1998")
+                .setDateOfBirth(3, "May", "1998")
                 .setSubjects("Biology")
                 .setHobbies("Music")
                 .setUploadPicture("test.jpeg")

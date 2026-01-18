@@ -2,7 +2,7 @@ package tests;
 
 import com.github.javafaker.Faker;
 
-public class TestData {
+/*public class TestData {
     static Faker faker = new Faker();
 
     static String firstName = faker.name().firstName();
@@ -11,4 +11,4 @@ public class TestData {
     static String currentAddress = faker.address().fullAddress();
     static String userNumber = faker.phoneNumber().subscriberNumber(10);
 
-}
+}*/

@@ -1,7 +1,6 @@
 package tests.data;
 
 import utils.FakerUtils;
-import utils.RandomUtils;
 
 public class RegistrationTestData {
 
@@ -21,19 +20,19 @@ public class RegistrationTestData {
     public String city;
 
     public RegistrationTestData() {
-        firstName = FakerUtils.firstName();
-        lastName = FakerUtils.lastName();
-        email = FakerUtils.email();
-        gender = RandomUtils.randomGender();
-        phoneNumber = FakerUtils.phoneNumber();
-        day = "3";
-        month = "May";
-        year = "1998";
-        subject = RandomUtils.randomSubject();
-        hobby = RandomUtils.randomHobby();
-        picture = "test.jpeg";
-        address = FakerUtils.address();
-        state = RandomUtils.randomState();
-        city = RandomUtils.randomCityForState(state);
+        firstName = FakerUtils.getFirstName();
+        lastName = FakerUtils.getLastName();
+        email = FakerUtils.getEmail();
+        gender = FakerUtils.getRandomGender();
+        phoneNumber = FakerUtils.getPhoneNumber();
+        day = FakerUtils.getRandomDay();
+        month = FakerUtils.getRandomMonth();
+        year = FakerUtils.getRandomYear();
+        subject = FakerUtils.getRandomSubject();
+        hobby = FakerUtils.getRandomHobby();
+        picture = FakerUtils.getRandomPictureFileName();
+        address = FakerUtils.getAddress();
+        state = FakerUtils.getRandomState();
+        city = FakerUtils.getRandomCity(state);
     }
 }
