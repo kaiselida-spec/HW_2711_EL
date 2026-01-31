@@ -20,7 +20,7 @@ public class RegistrationWithFakerTests extends TestBase {
                 .setEmail(data.email)
                 .setGender(data.gender)
                 .setUserNumber(data.phoneNumber)
-                .setDateOfBirth(dayInt, data.month, data.year)
+                .setDateOfBirth(data.day, data.month, data.year)
                 .setSubjects(data.subject)
                 .setHobbies(data.hobby)
                 .setUploadPicture(data.picture)

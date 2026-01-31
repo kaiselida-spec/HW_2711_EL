@@ -26,8 +26,7 @@ public class FakerUtils {
         return faker.phoneNumber().subscriberNumber(10);
     }
 
-    public static String getRandomDay() {
-        return String.valueOf(faker.number().numberBetween(1, 28));
+    public static String getRandomDay() {return String.valueOf(faker.number().numberBetween(1, 28));
     }
 
     public static String getRandomMonth() {
